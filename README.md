@@ -126,5 +126,3 @@ This project is licensed under the MIT License.
 
 * [MNIST Dataset](http://yann.lecun.com/exdb/mnist/)
 * TensorFlow and Keras documentation
-
-```
