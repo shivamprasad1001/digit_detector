@@ -106,7 +106,6 @@ tk
 * Add web version using Streamlit or Flask
 * Use a custom digit dataset for robustness
 * Export predictions to CSV or Excel
-* Upload model to Hugging Face or ONNX
 
 ---
 
