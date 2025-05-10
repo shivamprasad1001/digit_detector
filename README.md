@@ -8,11 +8,11 @@ Digit Detector is a full-stack machine learning project that trains a Convolutio
 
 ## 🚀 Features
 
-- ✅ Train a CNN model on MNIST digits
-- ✅ Save and reuse the trained model (`.h5`)
-- ✅ Predict digits from hand-drawn images in a GUI
-- ✅ Clean project structure for reproducibility
-- ✅ Real-world application demo using Python’s Tkinter
+-  Train a CNN model on MNIST digits
+-  Save and reuse the trained model (`.h5`)
+-  Predict digits from hand-drawn images in a GUI
+-  Clean project structure for reproducibility
+-  Real-world application demo using Python’s Tkinter
 
 ---
 
