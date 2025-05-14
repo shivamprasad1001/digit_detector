@@ -1,127 +1,132 @@
-# 🧠 Digit Detector - Handwritten Digit Recognition with CNN & GUI
+# Digit Detector
 
-![demo](https://user-images.githubusercontent.com/yourusername/demo.gif)
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.7%2B-brightgreen)
+![TensorFlow](https://img.shields.io/badge/tensorflow-2.x-orange)
 
-Digit Detector is a full-stack machine learning project that trains a Convolutional Neural Network (CNN) on the MNIST dataset to recognize handwritten digits. It also includes a real-time digit drawing interface built with Tkinter, bringing ML from model to user interaction.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/yourusername/demo.gif" alt="Digit Detector Demo" width="550">
+</p>
 
----
+## Overview
 
-## 🚀 Features
+Digit Detector is a comprehensive machine learning solution that leverages Convolutional Neural Networks (CNN) to recognize handwritten digits with high accuracy. Built on the MNIST dataset, this project combines advanced deep learning techniques with an intuitive GUI interface, providing a complete end-to-end implementation from model training to real-time user interaction.
 
--  Train a CNN model on MNIST digits
--  Save and reuse the trained model (`.h5`)
--  Predict digits from hand-drawn images in a GUI
--  Clean project structure for reproducibility
--  Real-world application demo using Python’s Tkinter
+## Key Features
 
----
+- **Advanced CNN Architecture**: Multi-layer convolutional network optimized for digit recognition
+- **Interactive GUI**: Real-time handwritten digit recognition via Tkinter drawing interface
+- **Model Persistence**: Save and load trained models for immediate deployment
+- **High Accuracy**: ~98% accuracy on the MNIST test dataset
+- **Modular Design**: Clean separation between training and inference components
 
-## 🏗️ Project Structure
+## Architecture
+
+The project utilizes a sequential CNN architecture:
 
 ```
+Input → Conv2D → MaxPooling2D → Conv2D → MaxPooling2D → Flatten → Dense(64) → Dense(10) → Output
+```
 
+### Model Parameters
+- **Optimizer**: Adam
+- **Loss Function**: Sparse Categorical Crossentropy
+- **Performance**: ~98% accuracy on test set
+
+## Project Structure
+
+```
 digit-detector/
-├── model/                   # Saved model goes here
-│   └── digit\_model.h5
+├── model/                # Trained model storage
+│   └── digit_model.h5
 ├── src/
-│   ├── train.py             # Model training script
-│   └── predict\_gui.py       # GUI prediction app
+│   ├── train.py          # CNN training implementation
+│   └── predict_gui.py    # GUI application for inference
 ├── .gitignore
 ├── README.md
 └── requirements.txt
-
-````
-
----
-
-## 🧠 Technologies Used
-
-- TensorFlow / Keras
-- NumPy
-- PIL (Pillow)
-- Tkinter (Python GUI)
-- MNIST Dataset
-
----
-
-## 🛠️ Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/digit-detector.git
-````
-```
-cd digit-detector
 ```
 
-### 2. Install Requirements
+## Installation
 
-```bash
-pip install -r requirements.txt
-```
+### Prerequisites
+- Python 3.7+
+- pip package manager
 
-### 3. Train the Model
+### Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/digit-detector.git
+   cd digit-detector
+   ```
+
+2. **Create and activate a virtual environment (recommended)**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+### Training the Model
 
 ```bash
 cd src
 python train.py
 ```
 
-Model will be saved to `model/digit_model.h5`.
+The trained model will be automatically saved to `model/digit_model.h5`.
 
-### 4. Run the GUI Application
+### Running the GUI Application
 
 ```bash
 python predict_gui.py
 ```
 
----
+This launches an interactive drawing canvas where you can:
+- Draw digits using your mouse
+- Submit for real-time recognition
+- Clear the canvas to try new digits
 
-## 📈 Model Summary
+## Dependencies
 
-```text
-Conv2D → MaxPool → Conv2D → MaxPool → Flatten → Dense(64) → Dense(10)
-```
+- TensorFlow 2.x
+- NumPy
+- Pillow (PIL)
+- Tkinter
 
-* Optimizer: `Adam`
-* Loss: `Sparse Categorical Crossentropy`
-* Accuracy: \~98% on test set
+## Future Development Roadmap
 
----
+- [ ] Web-based interface using Flask or Streamlit
+- [ ] Support for extended character recognition (letters, symbols)
+- [ ] Augmented training data for improved robustness
+- [ ] Batch processing capabilities for image files
+- [ ] Export functionality for prediction results
 
-## 📂 Requirements
+## Contributing
 
-```
-tensorflow
-numpy
-pillow
-tk
-```
+Contributions are welcome and appreciated. To contribute:
 
----
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 🔍 Future Improvements
+Please ensure your code follows the project's style guidelines and includes appropriate tests.
 
-* Add web version using Streamlit or Flask
-* Use a custom digit dataset for robustness
-* Export predictions to CSV or Excel
+## License
 
----
+Distributed under the MIT License. See `LICENSE` for more information.
 
-## 🤝 Contributing
+## Acknowledgments
 
-Pull requests are welcome! If you have suggestions or improvements, feel free to fork and open a PR.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-## 🙌 Acknowledgments
-
-* [MNIST Dataset](http://yann.lecun.com/exdb/mnist/)
-* TensorFlow and Keras documentation
+- [MNIST Dataset](http://yann.lecun.com/exdb/mnist/) - The foundation for training data
+- [TensorFlow Documentation](https://www.tensorflow.org/guide) - Deep learning framework
+- [Keras Documentation](https://keras.io/documentation/) - High-level neural networks API
