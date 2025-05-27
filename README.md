@@ -1,5 +1,4 @@
 
-
 # Digit Detector
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
@@ -30,9 +29,9 @@ Read the full walkthrough and explanation here:
 ## Architecture
 
 The project utilizes a sequential CNN architecture:
-```
+
 Input → Conv2D → MaxPooling2D → Conv2D → MaxPooling2D → Flatten → Dense(64) → Dense(10) → Output
-```
+
 ### Model Parameters
 
 - **Optimizer**: Adam  
@@ -40,9 +39,19 @@ Input → Conv2D → MaxPooling2D → Conv2D → MaxPooling2D → Flatten → De
 - **Performance**: ~98% accuracy on test set  
 
 ## Project Structure
-``
-digit-detector/ ├── model/                # Trained model storage │   └── digit_model.h5 ├── src/ │   ├── train.py          # CNN training implementation │   └── predict_gui.py    # GUI application for inference ├── .gitignore ├── README.md └── requirements.txt
-``
+
+```
+digit-detector/
+├── model/                # Trained model storage
+│   └── digit_model.h5
+├── src/
+│   ├── train.py          # CNN training implementation
+│   └── predict_gui.py    # GUI application for inference
+├── .gitignore
+├── README.md
+└── requirements.txt
+```
+
 ## Installation
 
 ### Prerequisites
@@ -56,52 +65,75 @@ digit-detector/ ├── model/                # Trained model storage │   �
    ```bash
    git clone https://github.com/yourusername/digit-detector.git
    cd digit-detector
+   ```
 
-2. Create and activate a virtual environment (recommended)
+2. **Create and activate a virtual environment (recommended)**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   ```
 
-python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
-### 3. Install dependencies
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+### Training the Model
 
 ```bash
-pip install -r requirements.txt
-
+cd src
+python train.py
 ```
 
-Contributing
+The trained model will be automatically saved to `model/digit_model.h5`.
+
+### Running the GUI Application
+
+```bash
+python predict_gui.py
+```
+
+This launches an interactive drawing canvas where you can:
+
+- Draw digits using your mouse
+- Submit for real-time recognition
+- Clear the canvas to try new digits
+
+## Dependencies
+
+- TensorFlow 2.x
+- NumPy
+- Pillow (PIL)
+- Tkinter
+
+## Future Development Roadmap
+
+- [ ] Web-based interface using Flask or Streamlit
+- [ ] Support for extended character recognition (letters, symbols)
+- [ ] Augmented training data for improved robustness
+- [ ] Batch processing capabilities for image files
+- [ ] Export functionality for prediction results
+
+## Contributing
 
 Contributions are welcome and appreciated. To contribute:
 
 1. Fork the repository
-
-
-2. Create a feature branch (git checkout -b feature/amazing-feature)
-
-
-3. Commit your changes (git commit -m 'Add some amazing feature')
-
-
-4. Push to the branch (git push origin feature/amazing-feature)
-
-
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-
 
 Please ensure your code follows the project's style guidelines and includes appropriate tests.
 
-License
+## License
 
 Distributed under the MIT License. See LICENSE for more information.
 
-Acknowledgments
+## Acknowledgments
 
-MNIST Dataset - The foundation for training data
-
-TensorFlow Documentation - Deep learning framework
-
-Keras Documentation - High-level neural networks API
-
-
-Let me know if you want this saved as a downloadable file or need help pushing it to GitHub.
-
+- MNIST Dataset - The foundation for training data
+- TensorFlow Documentation - Deep learning framework
+- Keras Documentation - High-level neural networks API
